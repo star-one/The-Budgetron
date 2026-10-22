@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Budget balancer demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#controls">Skip to the sliders</a>
+
+<header class="page-header">
+  <h1 id="page-title">Budget balancer demo</h1>
+  <p id="page-intro"></p>
+</header>
+
+<!-- The totals bar stays on screen while the sliders are moved -->
+<section class="summary" aria-label="Budget totals" aria-live="polite">
+  <p class="summary-item summary-income"><span class="summary-label">Total income</span><strong class="summary-value" id="total-income"></strong></p>
+  <p class="summary-item summary-spending"><span class="summary-label">Total spending</span><strong class="summary-value" id="total-spending"></strong></p>
+  <p class="summary-item summary-deficit"><span class="summary-label">Deficit</span><strong class="summary-value" id="total-deficit"></strong></p>
+</section>
+
+<main>
+  <figure class="chart-panel">
+    <figcaption>Income: original and your figures</figcaption>
+    <div id="chart-income"></div>
+  </figure>
+  <figure class="chart-panel">
+    <figcaption>Spending: original and your figures</figcaption>
+    <div id="chart-spending"></div>
+  </figure>
+
+  <!-- The sliders are built here from config.js -->
+  <div id="controls"></div>
+</main>
+
+<div class="page-actions">
+  <button type="button" id="reset" class="button-secondary" aria-label="Reset all values">Reset</button>
+</div>
+
+<footer class="page-footer">
+  <p>Sample data, simplified from the UK Budget 2025 forecasts. Not an official forecast.
+  Open source (MIT licence): see README.md.</p>
+</footer>
+
+<!-- config.js must come first: it defines the data main.js reads -->
+<script src="config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
